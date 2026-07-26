@@ -12,7 +12,6 @@ work
 tests
 examples
 vite.config.ts
-cloudflare-workers.d.ts
 worker
 dev-server*.log
 *.tar.gz
