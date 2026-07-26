@@ -571,12 +571,12 @@ export const tours: Tour[] = [
     notes: ["Blue Eye water is around 5°C.", "Tipping the guide and driver is recommended as standard practice."],
     content: localize(
       {
-        title: "From Tirana and Shkoder: Theth & Blue Eye Full Day Tour",
+        title: "From Tirana/Durrës/Golem: Theth & Blue Eye Full Day Tour",
         tagline: "Cross Qafë Thorë, meet Theth’s mountain heritage and hike to the glacial Blue Eye.",
         region: "Shkodër · Qafë Thorë · Theth · Blue Eye",
-        summary: "Depart Tirana at 06:00 and drive north past fields, rivers, Shkodra Lake and mountains, changing to local transport in Shkodër around 07:30. Climb to Qafë Thorë at 1,700 m for a sweeping view of the Albanian Alps, then visit Theth’s Old Church and Lock-in Tower. Around midday, hike to the Blue Eye through mountain and forest scenery. The route is roughly 6.2 km round trip, about 700 m of elevation gain and around 1.5 hours each way. It is rated easy to moderate but requires some hiking experience; the water is around 5°C.",
+        summary: "Early pickup is available from Tirana, Durrës or Golem, with the exact coastal pickup time confirmed before the tour. The route drives north past fields, rivers, Shkodra Lake and mountains, changing to local transport in Shkodër around 07:30. Climb to Qafë Thorë at 1,700 m for a sweeping view of the Albanian Alps, then visit Theth’s Old Church and Lock-in Tower. Around midday, hike to the Blue Eye through mountain and forest scenery. The route is roughly 6.2 km round trip, about 700 m of elevation gain and around 1.5 hours each way. It is rated easy to moderate but requires some hiking experience; the water is around 5°C.",
         stops: [
-          { time: "06:00", title: "Depart Tirana", text: "Drive north past fields, rivers, Shkodra Lake and mountain landscapes." },
+          { time: "Early", title: "Confirmed pickup", text: "Start from Tirana, Durrës or Golem; coastal pickup times are confirmed personally before the tour." },
           { time: "07:30", title: "Local transport from Shkodër", text: "Change to the vehicle suited to the mountain road." },
           { time: "2 h 20", title: "Mountain road", text: "Climb through increasingly rural northern Albania." },
           { time: "40 min", title: "Qafë Thorë viewpoint", text: "Pause at 1,700 m for a complete view of the Albanian Alps." },
@@ -589,9 +589,9 @@ export const tours: Tour[] = [
         ],
       },
       {
-        sq: { title: "Nga Tirana dhe Shkodra: Theth dhe Syri i Kaltër", tagline: "Kaloni Qafën e Thorës, njihni trashëgiminë e Thethit dhe ecni drejt Syrit të Kaltër.", region: "Shkodër · Qafë Thorë · Theth · Syri i Kaltër", summary: "Nisuni herët drejt Qafës së Thorës dhe Thethit, vizitoni kishën dhe Kullën e Ngujimit, pastaj bëni ecjen 6.2 km vajtje-ardhje drejt Syrit të Kaltër." },
-        de: { title: "Ab Tirana und Shkodër: Theth & Blue Eye Tagestour", tagline: "Überqueren Sie Qafë Thorë, entdecken Sie Theths Bergkultur und wandern Sie zum glazialen Blue Eye.", region: "Shkodër · Qafë Thorë · Theth · Blue Eye", summary: "Fahren Sie früh nach Qafë Thorë und Theth, besuchen Sie Kirche und Lock-in Tower und wandern Sie 6,2 km hin und zurück zum Blue Eye." },
-        fr: { title: "Depuis Tirana et Shkodër : Theth et Œil Bleu", tagline: "Franchissez Qafë Thorë, découvrez le patrimoine montagnard de Theth et marchez jusqu’à l’Œil Bleu.", region: "Shkodër · Qafë Thorë · Theth · Œil Bleu", summary: "Partez tôt vers Qafë Thorë et Theth, visitez l’église et la tour d’isolement, puis effectuez la randonnée de 6,2 km aller-retour jusqu’à l’Œil Bleu." },
+        sq: { title: "Nga Tirana/Durrësi/Golemi: Theth dhe Syri i Kaltër", tagline: "Kaloni Qafën e Thorës, njihni trashëgiminë e Thethit dhe ecni drejt Syrit të Kaltër.", region: "Shkodër · Qafë Thorë · Theth · Syri i Kaltër", summary: "Nisuni herët drejt Qafës së Thorës dhe Thethit, vizitoni kishën dhe Kullën e Ngujimit, pastaj bëni ecjen 6.2 km vajtje-ardhje drejt Syrit të Kaltër." },
+        de: { title: "Ab Tirana/Durrës/Golem: Theth & Blue Eye Tagestour", tagline: "Überqueren Sie Qafë Thorë, entdecken Sie Theths Bergkultur und wandern Sie zum glazialen Blue Eye.", region: "Shkodër · Qafë Thorë · Theth · Blue Eye", summary: "Fahren Sie früh nach Qafë Thorë und Theth, besuchen Sie Kirche und Lock-in Tower und wandern Sie 6,2 km hin und zurück zum Blue Eye." },
+        fr: { title: "Depuis Tirana/Durrës/Golem : Theth et Œil Bleu", tagline: "Franchissez Qafë Thorë, découvrez le patrimoine montagnard de Theth et marchez jusqu’à l’Œil Bleu.", region: "Shkodër · Qafë Thorë · Theth · Œil Bleu", summary: "Partez tôt vers Qafë Thorë et Theth, visitez l’église et la tour d’isolement, puis effectuez la randonnée de 6,2 km aller-retour jusqu’à l’Œil Bleu." },
       },
     ),
   },

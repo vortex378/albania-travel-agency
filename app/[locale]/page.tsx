@@ -50,6 +50,52 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const locale: Locale = isLocale(rawLocale) ? rawLocale : "en";
   const c = getCopy(locale);
   const editorial = editorialUi[locale];
+  const searchAnswer = {
+    en: {
+      eyebrow: "Albania tours · the clear answer",
+      title: "Daily Albania day tours for 2–8 travellers.",
+      text: "Albanian Tours Hub offers locally guided small-group and private Albania tours with pickup from Tirana, Durrës and Golem. Book directly through WhatsApp and pay cash to your guide on the day.",
+      links: [
+        ["Tours from Tirana", "/tours-from-tirana"],
+        ["Tours from Durrës", "/tours-from-durres"],
+        ["Tours from Golem", "/tours-from-golem"],
+        ["Private tours", "/private-tours-albania"],
+      ],
+    },
+    sq: {
+      eyebrow: "Ture në Shqipëri · përgjigjja e qartë",
+      title: "Ture ditore për 2–8 udhëtarë.",
+      text: "Albanian Tours Hub ofron ture private dhe në grupe të vogla me guida vendase dhe marrje nga Tirana, Durrësi dhe Golemi. Rezervoni direkt në WhatsApp dhe paguani cash te guida ditën e turit.",
+      links: [
+        ["Ture nga Tirana", "/tours-from-tirana"],
+        ["Ture nga Durrësi", "/tours-from-durres"],
+        ["Ture nga Golemi", "/tours-from-golem"],
+        ["Ture private", "/private-tours-albania"],
+      ],
+    },
+    de: {
+      eyebrow: "Albanien-Touren · die klare Antwort",
+      title: "Tägliche Touren für 2–8 Reisende.",
+      text: "Albanian Tours Hub bietet lokal geführte Klein- und Privattouren mit Abholung in Tirana, Durrës und Golem. Buchen Sie direkt per WhatsApp und bezahlen Sie am Reisetag bar beim Guide.",
+      links: [
+        ["Touren ab Tirana", "/tours-from-tirana"],
+        ["Touren ab Durrës", "/tours-from-durres"],
+        ["Touren ab Golem", "/tours-from-golem"],
+        ["Private Touren", "/private-tours-albania"],
+      ],
+    },
+    fr: {
+      eyebrow: "Circuits en Albanie · la réponse claire",
+      title: "Excursions quotidiennes pour 2–8 voyageurs.",
+      text: "Albanian Tours Hub propose des circuits privés et en petit groupe avec guides locaux et prise en charge à Tirana, Durrës et Golem. Réservez directement sur WhatsApp et payez le guide en espèces le jour même.",
+      links: [
+        ["Circuits depuis Tirana", "/tours-from-tirana"],
+        ["Circuits depuis Durrës", "/tours-from-durres"],
+        ["Circuits depuis Golem", "/tours-from-golem"],
+        ["Circuits privés", "/private-tours-albania"],
+      ],
+    },
+  }[locale];
 
   const websiteSchema = {
     "@context": "https://schema.org",
@@ -96,6 +142,23 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     <main>
       <JsonLd data={[websiteSchema, itemListSchema, navigationSchema]} />
       <Hero locale={locale} />
+
+      <section className="search-answer-section">
+        <Reveal>
+          <div>
+            <p className="eyebrow">{searchAnswer.eyebrow}</p>
+            <h2>{searchAnswer.title}</h2>
+          </div>
+          <div>
+            <p>{searchAnswer.text}</p>
+            <nav aria-label={searchAnswer.eyebrow}>
+              {searchAnswer.links.map(([label, path]) => (
+                <Link key={path} href={localizedPath(locale, path)}>{label}<ArrowRight /></Link>
+              ))}
+            </nav>
+          </div>
+        </Reveal>
+      </section>
 
       <section className="section journeys-section" id="journeys">
         <Reveal className="section-heading">

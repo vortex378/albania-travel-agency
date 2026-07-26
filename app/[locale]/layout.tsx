@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     appleWebApp: { capable: true, title: SITE_NAME, statusBarStyle: "black-translucent" },
     icons: {
       icon: [
-        { url: "/favicon.ico", type: "image/x-icon", sizes: "48x48" },
+        { url: "/favicon.ico", type: "image/x-icon", sizes: "96x96" },
         { url: "/icon-48.png", type: "image/png", sizes: "48x48" },
         { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
         { url: "/favicon.svg", type: "image/svg+xml", sizes: "any" },

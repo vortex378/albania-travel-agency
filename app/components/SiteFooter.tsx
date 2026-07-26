@@ -9,6 +9,12 @@ interface SiteFooterProps {
 
 export function SiteFooter({ locale }: SiteFooterProps) {
   const c = getCopy(locale);
+  const searchLinks = {
+    en: ["Tours from Tirana", "Tours from Durrës", "Tours from Golem"],
+    sq: ["Ture nga Tirana", "Ture nga Durrësi", "Ture nga Golemi"],
+    de: ["Touren ab Tirana", "Touren ab Durrës", "Touren ab Golem"],
+    fr: ["Circuits depuis Tirana", "Circuits depuis Durrës", "Circuits depuis Golem"],
+  }[locale];
   return (
     <footer className="site-footer">
       <div className="footer-brand">
@@ -19,8 +25,10 @@ export function SiteFooter({ locale }: SiteFooterProps) {
       <div className="footer-column">
         <strong>{c.footer.explore}</strong>
         <Link href={localizedPath(locale, "/tours")}>{c.nav.tours}</Link>
+        <Link href={localizedPath(locale, "/tours-from-tirana")}>{searchLinks[0]}</Link>
+        <Link href={localizedPath(locale, "/tours-from-durres")}>{searchLinks[1]}</Link>
+        <Link href={localizedPath(locale, "/tours-from-golem")}>{searchLinks[2]}</Link>
         <Link href={localizedPath(locale, "/travel-guide")}>{c.nav.guide}</Link>
-        <Link href={localizedPath(locale, "/albania")}>{c.nav.explore}</Link>
       </div>
       <div className="footer-column">
         <strong>{c.footer.support}</strong>

@@ -2,7 +2,7 @@
 
 import { CheckCircle2, Quote, Send, ShieldCheck, Star } from "lucide-react";
 import { FormEvent, useEffect, useMemo, useState } from "react";
-import type { Locale } from "../lib/site";
+import { WHATSAPP_NUMBER, type Locale } from "../lib/site";
 
 type VerifiedTourReview = {
   name: string;
@@ -57,10 +57,10 @@ const copy: Record<Locale, ReviewCopy> = {
     rating: "Your rating",
     comment: "Your review",
     commentHint: "What stood out? How was the guide, pace, route or pickup?",
-    submit: "Submit review",
+    submit: "Send review on WhatsApp",
     submitting: "Submitting…",
-    success: "Thank you. Your review was received and will appear after a quick authenticity check.",
-    moderation: "Reviews are checked before publication to protect guests and prevent spam.",
+    success: "WhatsApp opened. Send the prepared message to complete your review. It will appear after an authenticity check.",
+    moderation: "Reviews go directly to the operator on WhatsApp and are checked before publication.",
     selectCountry: "Select country",
   },
   sq: {
@@ -77,10 +77,10 @@ const copy: Record<Locale, ReviewCopy> = {
     rating: "Vlerësimi yt",
     comment: "Komenti yt",
     commentHint: "Çfarë të pëlqeu? Si ishte guida, ritmi, rruga ose marrja?",
-    submit: "Dërgo vlerësimin",
+    submit: "Dërgo në WhatsApp",
     submitting: "Duke dërguar…",
-    success: "Faleminderit. Vlerësimi u mor dhe do të shfaqet pas një kontrolli të shkurtër.",
-    moderation: "Vlerësimet kontrollohen para publikimit për të parandaluar abuzimin.",
+    success: "WhatsApp u hap. Dërgoni mesazhin e përgatitur për ta përfunduar vlerësimin. Ai shfaqet pas kontrollit.",
+    moderation: "Vlerësimet shkojnë direkt te operatori në WhatsApp dhe kontrollohen para publikimit.",
     selectCountry: "Zgjidh shtetin",
   },
   de: {
@@ -97,10 +97,10 @@ const copy: Record<Locale, ReviewCopy> = {
     rating: "Ihre Bewertung",
     comment: "Ihre Rezension",
     commentHint: "Was war besonders? Wie waren Guide, Tempo, Route oder Abholung?",
-    submit: "Bewertung senden",
+    submit: "Per WhatsApp senden",
     submitting: "Wird gesendet…",
-    success: "Vielen Dank. Ihre Bewertung wird nach einer kurzen Echtheitsprüfung veröffentlicht.",
-    moderation: "Bewertungen werden vor der Veröffentlichung geprüft, um Spam zu verhindern.",
+    success: "WhatsApp wurde geöffnet. Senden Sie die vorbereitete Nachricht, um die Bewertung abzuschließen. Sie erscheint nach der Prüfung.",
+    moderation: "Bewertungen gehen direkt per WhatsApp an den Anbieter und werden vor Veröffentlichung geprüft.",
     selectCountry: "Land auswählen",
   },
   fr: {
@@ -117,10 +117,10 @@ const copy: Record<Locale, ReviewCopy> = {
     rating: "Votre note",
     comment: "Votre avis",
     commentHint: "Qu’avez-vous aimé ? Comment étaient le guide, le rythme, l’itinéraire ou la prise en charge ?",
-    submit: "Envoyer l’avis",
+    submit: "Envoyer sur WhatsApp",
     submitting: "Envoi…",
-    success: "Merci. Votre avis sera publié après une rapide vérification d’authenticité.",
-    moderation: "Les avis sont vérifiés avant publication afin d’éviter le spam.",
+    success: "WhatsApp s’est ouvert. Envoyez le message préparé pour terminer votre avis. Il paraîtra après vérification.",
+    moderation: "Les avis sont envoyés directement à l’opérateur sur WhatsApp et vérifiés avant publication.",
     selectCountry: "Choisir le pays",
   },
 };
@@ -185,36 +185,32 @@ export function TourReviews({
   const displayRating = communitySummary.rating ?? rating;
   const displayCount = communitySummary.count || reviewCount;
 
-  async function submitReview(event: FormEvent<HTMLFormElement>) {
+  function submitReview(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
     setStatus("submitting");
     setError("");
-
-    try {
-      const response = await fetch("/api/reviews", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          tourSlug,
-          firstName: data.get("firstName"),
-          lastName: data.get("lastName"),
-          countryCode: data.get("countryCode"),
-          comment: data.get("comment"),
-          website: data.get("website"),
-          rating: selectedRating,
-        }),
-      });
-      const result = await response.json() as { error?: string };
-      if (!response.ok) throw new Error(result.error || "Unable to submit review.");
-      form.reset();
-      setSelectedRating(5);
+    if (String(data.get("website") || "").trim()) {
       setStatus("success");
-    } catch (submissionError) {
-      setError(submissionError instanceof Error ? submissionError.message : "Unable to submit review.");
-      setStatus("error");
+      return;
     }
+
+    const countryCode = String(data.get("countryCode") || "").toUpperCase();
+    const countryName = countries.find(([code]) => code === countryCode)?.[1] || countryCode;
+    const reviewMessage = [
+      "Hello Albanian Tours Hub! I would like to submit a genuine tour review.",
+      `Tour: ${tourSlug}`,
+      `Name: ${String(data.get("firstName") || "").trim()} ${String(data.get("lastName") || "").trim()}`,
+      `Country: ${countryName} (${countryCode})`,
+      `Rating: ${selectedRating}/5`,
+      `Review: ${String(data.get("comment") || "").trim()}`,
+      "I confirm this describes my own experience and may be published after moderation.",
+    ].join("\n");
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(reviewMessage)}`, "_blank", "noopener,noreferrer");
+    form.reset();
+    setSelectedRating(5);
+    setStatus("success");
   }
 
   return (

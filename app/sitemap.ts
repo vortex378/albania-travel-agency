@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { travelGuideContent, travelGuides } from "./lib/editorial";
 import { getCopy } from "./lib/i18n";
+import { getSearchLanding, searchLandingSlugs } from "./lib/searchLandings";
 import { CONTENT_UPDATED, videoDurationSeconds } from "./lib/seo";
 import { locales, localizedPath, SITE_NAME, SITE_URL, type Locale } from "./lib/site";
 import { tours, tourContent } from "./lib/tours";
@@ -156,6 +157,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
+  const searchLandingEntries = locales.flatMap((locale) =>
+    searchLandingSlugs.map((slug) => {
+      const landing = getSearchLanding(slug, locale);
+      if (!landing) throw new Error(`Missing search landing content for ${locale}/${slug}`);
+      return baseEntry({
+        locale,
+        path: `/${slug}`,
+        image: landing.image,
+        priority: 0.9,
+        changeFrequency: "weekly",
+      });
+    }),
+  );
+
   const guideEntries = locales.flatMap((locale) =>
     travelGuides.map((guide) => {
       const content = travelGuideContent(guide, locale);
@@ -180,5 +195,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
-  return [...staticEntries, ...tourEntries, ...guideEntries];
+  return [...staticEntries, ...searchLandingEntries, ...tourEntries, ...guideEntries];
 }

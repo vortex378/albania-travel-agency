@@ -10,7 +10,13 @@ Albanian Tours Hub offers nine bookable Albania tours with local guides, hotel p
 - [/sq](/sq) — Albanian homepage
 - [/de](/de) — German homepage
 - [/fr](/fr) — French homepage
-- [/en/tours](/en/tours) — Daily small-group tours from Tirana
+- [/en/tours](/en/tours) — Daily small-group tours from Tirana, Durrës and Golem
+- [/en/albania-day-tours](/en/albania-day-tours) — Guided Albania day tours for 2–8 travellers
+- [/en/tours-from-tirana](/en/tours-from-tirana) — Tours with pickup from Tirana
+- [/en/tours-from-durres](/en/tours-from-durres) — Tours with pickup from Durrës
+- [/en/tours-from-golem](/en/tours-from-golem) — Tours with pickup from Golem
+- [/en/private-tours-albania](/en/private-tours-albania) — Private Albania tours for couples, families and friends
+- [/en/small-group-albania-tours](/en/small-group-albania-tours) — Small-group tours limited to 2–8 travellers
 - [/en/travel-guide](/en/travel-guide) — Practical Albania travel planning
 - [/en/booking](/en/booking) — WhatsApp booking and in-person payment
 - [/en/faq](/en/faq) — Traveller questions and answers
@@ -26,7 +32,7 @@ Albanian Tours Hub offers nine bookable Albania tours with local guides, hotel p
 - [Berat UNESCO and Belshi Lake — from €50](/en/tours/from-tirana-durres-golem-berat-unesco-and-belshi-lake-tour)
 - [Cape of Rodon and optional Duka Winery visit — from €68](/en/tours/from-tirana-durres-golem-cape-of-rodon-and-wine-tasting-tour)
 - [Durrës Museum, Amphitheater and Coast — from €50](/en/tours/from-tirana-explore-durres-museum-amphitheater-and-coastal)
-- [Theth and Blue Eye Full Day Tour — from €123](/en/tours/from-tirana-and-shkoder-theth-and-blue-eye-full-day-tour)
+- [Theth and Blue Eye Full Day Tour from Tirana, Durrës or Golem — from €123](/en/tours/from-tirana-and-shkoder-theth-and-blue-eye-full-day-tour)
 
 ## Planning guides
 
