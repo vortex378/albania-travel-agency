@@ -1,0 +1,15 @@
+node_modules
+.next
+.git
+.openai
+.vercel
+.vinext
+.wrangler
+build
+dist
+outputs
+work
+tests
+examples
+dev-server*.log
+*.tar.gz
