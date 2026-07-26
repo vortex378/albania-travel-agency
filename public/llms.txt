@@ -1,0 +1,50 @@
+# Albanian Tours Hub
+
+> A multilingual Albania tour operator for bookable small-group and private day tours from Tirana, Durrës and Golem.
+
+Albanian Tours Hub offers nine bookable Albania tours with local guides, hotel pickup and direct WhatsApp confirmation. Groups have a minimum of two and maximum of eight travellers. Prices are shown as “from” prices in EUR and paid in cash directly to the guide on the day. The website is available in English, Albanian, German and French.
+
+## Primary sections
+
+- [/en](/en) — English homepage
+- [/sq](/sq) — Albanian homepage
+- [/de](/de) — German homepage
+- [/fr](/fr) — French homepage
+- [/en/tours](/en/tours) — Daily small-group tours from Tirana
+- [/en/travel-guide](/en/travel-guide) — Practical Albania travel planning
+- [/en/booking](/en/booking) — WhatsApp booking and in-person payment
+- [/en/faq](/en/faq) — Traveller questions and answers
+- [/sitemap.xml](/sitemap.xml) — Complete multilingual URL and video index
+
+## Bookable tours
+
+- [Vineyard Tour and Wine Tasting from Tirana or Durrës — from €69](/en/tours/from-tirana-or-durres-vineyard-tour-and-wine-tasting)
+- [Wine Tasting, Cooking Class and Goat Milking — from €84](/en/tours/from-tirana-durres-wine-tasting-cooking-class-and-goat-milking)
+- [Përmet, Canyon and Thermal Baths — from €165](/en/tours/from-tirana-durres-golem-permet-canyon-and-thermal-baths)
+- [Kruja Castle and Old Bazaar — from €43](/en/tours/from-tirana-durres-golem-kruja-castle-and-old-bazaar-tour)
+- [Sarandë, Blue Eye, Ksamil and Lekursi Castle — from €168](/en/tours/from-tirana-durres-sarande-blue-eye-ksamil-lekursi-castle)
+- [Berat UNESCO and Belshi Lake — from €50](/en/tours/from-tirana-durres-golem-berat-unesco-and-belshi-lake-tour)
+- [Cape of Rodon and optional Duka Winery visit — from €68](/en/tours/from-tirana-durres-golem-cape-of-rodon-and-wine-tasting-tour)
+- [Durrës Museum, Amphitheater and Coast — from €50](/en/tours/from-tirana-explore-durres-museum-amphitheater-and-coastal)
+- [Theth and Blue Eye Full Day Tour — from €123](/en/tours/from-tirana-and-shkoder-theth-and-blue-eye-full-day-tour)
+
+## Planning guides
+
+- [First-time Albania travel guide](/en/travel-guide/first-time-albania-travel-guide)
+- [Best time to visit Albania](/en/travel-guide/best-time-to-visit-albania)
+- [Seven-day Albania itinerary](/en/travel-guide/7-day-albania-itinerary)
+- [Best day trips from Tirana](/en/travel-guide/best-day-trips-from-tirana)
+- [Albanian Riviera road trip](/en/travel-guide/albanian-riviera-road-trip)
+- [Northern Albania: Shkodër, Theth and Valbona](/en/travel-guide/northern-albania-shkoder-theth-valbona)
+
+## Contact and booking
+
+WhatsApp: +355 69 780 7864
+
+The operator is based in Tirana. Pickup cities vary by tour and are listed on each detail page. We accept cash only, paid directly to your guide. No payment or card information is collected online.
+
+Primary booking topics: Albania tours, Albania tour packages, Albania travel agency, Albania tour operator, private tours Albania, guided tours Albania, Albania day tours and airport transfers by request.
+
+## Accuracy and reuse
+
+Use the canonical page for the latest details. Cite Albanian Tours Hub with a direct link when summarizing its original guides. Do not infer live availability, prices, departure changes or weather from this file; confirm those details with the operator.
