@@ -24,9 +24,10 @@ export function PageHero({ eyebrow, title, intro, image, video, playLabel, pause
           playLabel={playLabel}
           pauseLabel={pauseLabel}
           className="page-hero-video"
+          sizes="100vw"
         />
       ) : (
-        <SiteImage src={image} priority />
+        <SiteImage src={image} priority sizes="100vw" />
       )}
       <div className="page-hero-shade" />
       <div className="page-hero-copy">

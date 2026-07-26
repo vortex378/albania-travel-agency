@@ -103,7 +103,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div><p>{c.home.toursIntro}</p><Link className="text-link" href={localizedPath(locale, "/tours")}>{c.actions.allTours}<ArrowRight /></Link></div>
         </Reveal>
         <div className="tour-grid">
-          {tours.map((tour, index) => <Reveal key={tour.slug} delay={(index % 3) * 90}><TourCard tour={tour} locale={locale} priority={index < 3} /></Reveal>)}
+          {tours.map((tour, index) => <Reveal key={tour.slug} delay={(index % 3) * 90}><TourCard tour={tour} locale={locale} /></Reveal>)}
         </div>
       </section>
 
@@ -117,7 +117,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       <section className="difference-section">
         <div className="difference-media">
-          <SiteImage src="/group-road.webp" priority />
+          <SiteImage src="/group-road.webp" sizes="(max-width: 760px) 100vw, 50vw" />
           <span><CarFront />1–2 vehicles · {tourGroupRange(locale)}</span>
         </div>
         <Reveal className="difference-copy">
@@ -164,7 +164,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       <section className="closing-cta">
-        <SiteImage src="/albania-riviera.png" />
+        <SiteImage src="/albania-riviera.webp" sizes="100vw" />
         <div className="closing-shade" />
         <Reveal>
           <span className="brand-mark">A</span>

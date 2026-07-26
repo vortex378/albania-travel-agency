@@ -26,8 +26,8 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
 
   return (
     <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
-      <Link className="brand" href={localizedPath(locale)} aria-label="Albanian Tours Hub">
-        <span className="brand-mark">A</span>
+      <Link className="brand" href={localizedPath(locale)}>
+        <span className="brand-mark" aria-hidden="true">A</span>
         <span className="brand-wordmark">Albanian Tours Hub<small>Small-group journeys</small></span>
       </Link>
 
@@ -41,7 +41,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
 
       <div className="header-actions">
         <LanguageSwitcher locale={locale} />
-        <WhatsAppBooking locale={locale} className="header-booking">
+        <WhatsAppBooking locale={locale} className="header-booking" ariaLabel={c.actions.plan}>
           <MessageCircle aria-hidden="true" />
           <span>{c.actions.plan}</span>
         </WhatsAppBooking>

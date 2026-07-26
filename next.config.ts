@@ -3,11 +3,9 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   compress: true,
-  // Serve the original files directly. This keeps image delivery reliable on
-  // both Vercel and the Sites runtime instead of depending on a runtime image
-  // optimizer route.
   images: {
-    unoptimized: true,
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 31536000,
   },
   async headers() {
     return [

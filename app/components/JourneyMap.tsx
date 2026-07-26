@@ -30,11 +30,16 @@ export function JourneyMap({ locale }: JourneyMapProps) {
     if (!container.current || mapRef.current) return;
     let cancelled = false;
     const markers = markerRefs.current;
+    const mapContainer = container.current;
 
-    void import("maplibre-gl").then((maplibregl) => {
-      if (cancelled || !container.current) return;
-      const map = new maplibregl.Map({
-        container: container.current,
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      observer.disconnect();
+
+      void import("maplibre-gl").then((maplibregl) => {
+        if (cancelled || !container.current) return;
+        const map = new maplibregl.Map({
+          container: container.current,
         style: "https://tiles.openfreemap.org/styles/liberty",
         center: [19.95, 41.15],
         zoom: 6.2,
@@ -84,11 +89,15 @@ export function JourneyMap({ locale }: JourneyMapProps) {
         markers.set(tour.slug, marker);
         new maplibregl.Marker({ element: marker }).setLngLat(tour.coordinates).addTo(map);
       });
-      mapRef.current = map;
-    });
+        mapRef.current = map;
+      });
+    }, { rootMargin: "240px 0px", threshold: 0.01 });
+
+    observer.observe(mapContainer);
 
     return () => {
       cancelled = true;
+      observer.disconnect();
       mapRef.current?.remove();
       mapRef.current = null;
       markers.clear();
@@ -97,7 +106,7 @@ export function JourneyMap({ locale }: JourneyMapProps) {
 
   return (
     <div className="map-shell">
-      <div className="map-canvas" ref={container} aria-label={c.home.mapTitle} />
+      <div className="map-canvas" ref={container} role="region" aria-label={c.home.mapTitle} />
       <article className="map-card">
         <div className="map-card-image"><SiteImage src={active.image} /></div>
         <div className="map-card-copy">

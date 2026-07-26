@@ -51,7 +51,7 @@ export default async function ToursPage({ params }: { params: Promise<{ locale: 
       <PageHero eyebrow={c.toursPage.eyebrow} title={c.toursPage.title} intro={c.toursPage.intro} image="/mountain-road.webp" />
       <section className="section tours-index">
         <div className="tour-grid">
-          {tours.map((tour, index) => <Reveal key={tour.slug} delay={(index % 3) * 90}><TourCard tour={tour} locale={locale} priority={index < 3} /></Reveal>)}
+          {tours.map((tour, index) => <Reveal key={tour.slug} delay={(index % 3) * 90}><TourCard tour={tour} locale={locale} /></Reveal>)}
         </div>
       </section>
     </main>

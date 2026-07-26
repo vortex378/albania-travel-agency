@@ -9,10 +9,10 @@
   --sand: #e9dfcd;
   --line: #dcd8ce;
   --muted: #6d746e;
-  --coral: #e76c53;
-  --coral-dark: #cb5540;
+  --coral: #b94734;
+  --coral-dark: #963725;
   --gold: #d8b066;
-  --green: #1f9d61;
+  --green: #137849;
   --shadow: 0 28px 80px rgba(20, 39, 28, .13);
 }
 
@@ -29,6 +29,10 @@ img, video { display: block; max-width: 100%; }
 em { font-family: var(--font-display); font-weight: 400; }
 ::selection { background: var(--coral); color: #fff; }
 :focus-visible { outline: 2px solid var(--coral); outline-offset: 3px; }
+main > section:not(.home-hero):not(.page-hero):not(.tour-detail-hero) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 760px;
+}
 
 .site-header {
   position: fixed;
@@ -61,23 +65,24 @@ em { font-family: var(--font-display); font-weight: 400; }
 .desktop-nav a:hover::after { right: 0; }
 .header-actions { justify-self: end; display: flex; align-items: center; gap: 10px; }
 .language-switcher { position: relative; }
-.language-trigger { height: 40px; padding: 0 10px; border: 0; background: transparent; color: inherit; display: flex; align-items: center; gap: 6px; font-size: 9px; font-weight: 800; }
+.language-trigger { min-width: 44px; height: 44px; padding: 0 10px; border: 0; background: transparent; color: inherit; display: flex; align-items: center; gap: 6px; font-size: 9px; font-weight: 800; }
 .language-trigger svg:first-child { width: 15px; }
 .language-trigger svg:last-child { width: 11px; }
 .language-menu { position: absolute; top: 48px; right: 0; min-width: 160px; padding: 7px; background: #fff; color: var(--ink); border: 1px solid var(--line); box-shadow: var(--shadow); }
-.language-menu a { min-height: 38px; padding: 0 10px; display: flex; align-items: center; justify-content: space-between; font-size: 10px; font-weight: 700; }
+.language-menu a { min-height: 44px; padding: 0 10px; display: flex; align-items: center; justify-content: space-between; font-size: 10px; font-weight: 700; }
 .language-menu a:hover { background: #edf1eb; }
 .language-menu svg { width: 14px; color: var(--green); }
 .booking-trigger { border: 0; }
 .header-booking { height: 42px; padding: 0 16px; border-radius: 99px; background: rgba(255, 255, 255, .95); color: var(--ink); display: flex; align-items: center; gap: 8px; font-size: 9px; font-weight: 850; }
 .site-header.is-scrolled .header-booking { background: var(--green); color: #fff; }
 .header-booking svg { width: 16px; }
-.menu-toggle { display: none; width: 40px; height: 40px; border: 0; background: transparent; color: inherit; place-items: center; }
+.menu-toggle { display: none; width: 44px; height: 44px; border: 0; background: transparent; color: inherit; place-items: center; }
 .menu-toggle svg { width: 21px; }
 
 .home-hero { height: min(930px, 100svh); min-height: 720px; position: relative; overflow: hidden; color: #fff; }
 .hero-media, .hero-overlay { position: absolute; inset: 0; }
-.hero-media video { width: 100%; height: 100%; object-fit: cover; }
+.hero-media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .8s ease; }
+.hero-media video.is-ready { opacity: 1; }
 .hero-overlay { background: linear-gradient(90deg, rgba(8, 18, 12, .87) 0%, rgba(8, 18, 12, .48) 47%, rgba(8, 18, 12, .08) 76%), linear-gradient(0deg, rgba(7, 15, 10, .52), transparent 45%); }
 .hero-inner { position: absolute; left: 8vw; top: 48%; transform: translateY(-50%); max-width: 960px; z-index: 2; }
 .hero-eyebrow, .eyebrow { margin: 0; color: var(--coral); font-size: 9px; font-weight: 850; letter-spacing: .18em; text-transform: uppercase; }
@@ -98,7 +103,7 @@ em { font-family: var(--font-display); font-weight: 400; }
 .hero-proof { position: absolute; right: 0; bottom: 0; z-index: 3; width: min(850px, 68vw); min-height: 106px; display: grid; grid-template-columns: repeat(4, 1fr); background: rgba(249, 246, 238, .96); color: var(--ink); backdrop-filter: blur(12px); }
 .hero-proof span { padding: 24px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--line); font-size: 9px; font-weight: 750; }
 .hero-proof i { margin-bottom: 8px; color: var(--coral); font: normal 400 14px/1 var(--font-display); }
-.video-control { position: absolute; right: 25px; bottom: 126px; z-index: 4; height: 35px; padding: 0 11px; border: 1px solid rgba(255, 255, 255, .35); border-radius: 99px; background: rgba(10, 20, 14, .32); color: #fff; display: flex; align-items: center; gap: 7px; font-size: 7px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; backdrop-filter: blur(8px); }
+.video-control { position: absolute; right: 25px; bottom: 126px; z-index: 4; min-width: 44px; height: 44px; padding: 0 13px; border: 1px solid rgba(255, 255, 255, .48); border-radius: 99px; background: rgba(10, 20, 14, .62); color: #fff; display: flex; align-items: center; gap: 7px; font-size: 7px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; backdrop-filter: blur(8px); }
 .video-control svg { width: 12px; }
 .scroll-cue { position: absolute; left: 4.5vw; bottom: 34px; z-index: 3; display: flex; align-items: center; gap: 8px; font-size: 7px; text-transform: uppercase; letter-spacing: .15em; transform: rotate(-90deg); transform-origin: left center; }
 .scroll-cue svg { width: 14px; }
@@ -163,15 +168,15 @@ em { font-family: var(--font-display); font-weight: 400; }
 .pay-in-hand--compact { margin: 9px 0 0; padding: 9px 10px; font-size: 7px; }
 .pay-in-hand--compact svg { width: 14px; min-width: 14px; }
 .tour-card-footer { padding-top: 12px; display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); align-items: stretch; gap: 7px; }
-.card-call { min-height: 40px; padding: 0 10px; border: 1px solid var(--line); border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; color: var(--ink); font-size: 7px; font-weight: 850; text-align: center; }
+.card-call { min-height: 44px; padding: 0 10px; border: 1px solid var(--line); border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; color: var(--ink); font-size: 7px; font-weight: 850; text-align: center; }
 .card-call svg { width: 13px; flex: 0 0 auto; }
-.card-book { min-height: 40px; padding: 0 13px; border-radius: 6px; background: var(--green); color: #fff; display: flex; align-items: center; gap: 7px; font-size: 8px; font-weight: 850; }
+.card-book { min-height: 44px; padding: 0 13px; border-radius: 6px; background: var(--green); color: #fff; display: flex; align-items: center; gap: 7px; font-size: 8px; font-weight: 850; }
 .card-book svg { width: 14px; }
 
 .map-section { padding: 115px 7vw 125px; background: var(--sand); }
 .map-shell { max-width: 1400px; height: 690px; margin: auto; position: relative; overflow: hidden; border: 1px solid #d1cabd; background: #dfe4dd; }
 .map-canvas { position: absolute; inset: 0; }
-.map-marker { width: 34px; height: 34px; border: 3px solid #fff; border-radius: 50%; background: var(--forest); color: #fff; box-shadow: 0 6px 20px rgba(17, 38, 24, .28); font-size: 10px; font-weight: 850; transition: transform .2s ease, background .2s ease; }
+.map-marker { width: 44px; height: 44px; border: 3px solid #fff; border-radius: 50%; background: var(--forest); color: #fff; box-shadow: 0 6px 20px rgba(17, 38, 24, .28); font-size: 10px; font-weight: 850; transition: transform .2s ease, background .2s ease; }
 .map-marker:hover, .map-marker.active { background: var(--coral); transform: scale(1.17); }
 .map-marker.tirana { display: grid; place-items: center; background: var(--cream); color: var(--forest); border-color: var(--forest); font: 400 17px/1 var(--font-display); }
 .map-card { position: absolute; left: 28px; bottom: 28px; z-index: 2; width: 390px; background: rgba(252, 250, 245, .96); box-shadow: var(--shadow); backdrop-filter: blur(14px); }
@@ -209,7 +214,7 @@ em { font-family: var(--font-display); font-weight: 400; }
 .motion-section { padding: 115px 7vw 135px; background: var(--forest); color: #fff; }
 .section-heading.light .eyebrow { color: #e6bf75; }
 .section-heading.light h2 { color: #fff; }
-.motion-toggle { justify-self: end; align-self: end; min-height: 40px; padding: 0 14px; border: 1px solid #64766a; border-radius: 99px; background: transparent; color: #fff; display: flex; align-items: center; gap: 7px; font-size: 8px; font-weight: 800; }
+.motion-toggle { justify-self: end; align-self: end; min-height: 44px; padding: 0 14px; border: 1px solid #84968a; border-radius: 99px; background: transparent; color: #fff; display: flex; align-items: center; gap: 7px; font-size: 8px; font-weight: 800; }
 .motion-toggle svg { width: 14px; }
 .motion-grid { max-width: 1400px; margin: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .motion-card { height: 520px; position: relative; overflow: hidden; background: #142019; }
@@ -276,6 +281,7 @@ em { font-family: var(--font-display); font-weight: 400; }
 .footer-column { display: flex; flex-direction: column; align-items: flex-start; gap: 11px; }
 .footer-column strong { margin-bottom: 5px; color: #d8bd84; font-size: 8px; text-transform: uppercase; letter-spacing: .13em; }
 .footer-column a, .footer-column span { color: #b8c3ba; font-size: 8px; line-height: 1.55; }
+.footer-column a { min-height: 44px; display: flex; align-items: center; }
 .footer-bottom { grid-column: 1 / -1; margin-top: 36px; padding-top: 20px; border-top: 1px solid #3d5042; display: flex; justify-content: space-between; color: #92a095; font-size: 7px; }
 
 .booking-backdrop { position: fixed; inset: 0; z-index: 300; background: rgba(8, 17, 11, .73); backdrop-filter: blur(8px); }
@@ -451,7 +457,7 @@ em { font-family: var(--font-display); font-weight: 400; }
 .review-form input:focus, .review-form select:focus, .review-form textarea:focus { border-color: #d9bd78; background: rgba(255, 255, 255, .12); }
 .review-rating-picker { margin: 0; padding: 0; border: 0; }
 .review-rating-picker > div { height: 45px; display: flex; align-items: center; gap: 3px; }
-.review-rating-picker button { padding: 4px; border: 0; background: transparent; color: #738279; }
+.review-rating-picker button { width: 44px; height: 44px; padding: 8px; border: 0; background: transparent; color: #738279; }
 .review-rating-picker svg { width: 23px; height: 23px; transition: transform .2s, color .2s; }
 .review-rating-picker button:hover svg { transform: scale(1.12); }
 .review-rating-picker svg.active { fill: #e3b94e; stroke: #e3b94e; }
@@ -539,7 +545,7 @@ em { font-family: var(--font-display); font-weight: 400; }
   .desktop-nav.open { display: flex; }
   .menu-toggle { display: grid; }
   .header-booking span { display: none; }
-  .header-booking { width: 42px; padding: 0; justify-content: center; }
+  .header-booking { width: 44px; height: 44px; padding: 0; justify-content: center; }
   .tour-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .section-heading { gap: 5vw; }
   .process-grid { grid-template-columns: repeat(2, 1fr); }
@@ -571,7 +577,7 @@ em { font-family: var(--font-display); font-weight: 400; }
   .hero-proof span { min-height: 63px; padding: 12px 16px; border-bottom: 1px solid var(--line); font-size: 8px; }
   .hero-proof span:nth-child(2n) { border-right: 0; }
   .hero-proof i { margin-bottom: 4px; font-size: 12px; }
-  .video-control { right: 13px; bottom: 142px; width: 35px; padding: 0; justify-content: center; }
+  .video-control { right: 13px; bottom: 142px; width: 44px; padding: 0; justify-content: center; }
   .video-control span { display: none; }
   .scroll-cue { display: none; }
   .trust-rail { padding: 0 12px; grid-template-columns: 1fr 1fr; }
@@ -599,7 +605,7 @@ em { font-family: var(--font-display); font-weight: 400; }
   .tour-card-price { min-height: 29px; margin: 9px 0 0; font-size: 6px; }
   .tour-card-price strong { font-size: 17px; }
   .tour-card-footer { padding-top: 10px; grid-template-columns: 1fr; gap: 6px; }
-  .card-call, .card-book { min-height: 35px; padding: 0 7px; font-size: 6px; }
+  .card-call, .card-book { min-height: 44px; padding: 0 7px; font-size: 6px; }
   .card-call svg, .card-book svg { width: 11px; }
   .card-book { width: 100%; justify-content: center; }
   .map-section { padding: 78px 14px; }
@@ -721,7 +727,7 @@ em { font-family: var(--font-display); font-weight: 400; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
   .hero-media video, .motion-card video { display: none; }
-  .hero-media { background: url("/albania-riviera.png") center / cover; }
+  .hero-media { background: url("/albania-riviera.webp") center / cover; }
 }
 
 /* Premium editorial and destination system */
@@ -748,13 +754,15 @@ em { font-family: var(--font-display); font-weight: 400; }
 .desktop-nav a { white-space: nowrap; }
 
 .ambient-video { position: absolute; inset: 0; overflow: hidden; background: var(--forest); }
-.ambient-video video { width: 100%; height: 100%; object-fit: cover; }
+.ambient-video > img { z-index: 0; }
+.ambient-video video { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .55s ease; }
+.ambient-video video.is-ready { opacity: 1; }
 .ambient-video-control {
   position: absolute;
   right: 18px;
   bottom: 18px;
   z-index: 4;
-  min-height: 38px;
+  min-height: 44px;
   padding: 0 13px;
   border: 1px solid rgba(255, 255, 255, .42);
   border-radius: 99px;
@@ -947,13 +955,13 @@ em { font-family: var(--font-display); font-weight: 400; }
   .desktop-nav.open { display: flex; }
   .menu-toggle { display: grid; }
   .header-booking span { display: none; }
-  .header-booking { width: 42px; padding: 0; justify-content: center; }
+  .header-booking { width: 44px; height: 44px; padding: 0; justify-content: center; }
 }
 
 @media (max-width: 760px) {
   .brand-wordmark { font-size: 13px; }
   .brand-wordmark small { margin-top: 4px; font-size: 5.5px; }
-  .page-hero-video .ambient-video-control, .tour-detail-video .ambient-video-control { right: 12px; bottom: 14px; width: 36px; padding: 0; justify-content: center; }
+  .page-hero-video .ambient-video-control, .tour-detail-video .ambient-video-control { right: 12px; bottom: 14px; width: 44px; padding: 0; justify-content: center; }
   .ambient-video-control span { display: none; }
   .tour-card-arrow { display: none; }
   .home-destinations { padding-top: 84px; }

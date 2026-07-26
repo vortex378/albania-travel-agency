@@ -21,14 +21,19 @@ export function TourCard({ tour, locale, priority = false }: TourCardProps) {
 
   return (
     <article className={`tour-card tour-card--${tour.category}`}>
-      <Link className="tour-card-image" href={localizedPath(locale, `/tours/${tour.slug}`)}>
-        <AmbientVideo src={tour.video} poster={tour.image} priority={priority} />
+      <Link className="tour-card-image" href={localizedPath(locale, `/tours/${tour.slug}`)} aria-label={content.title}>
+        <AmbientVideo
+          src={tour.video}
+          poster={tour.image}
+          priority={priority}
+          sizes="(max-width: 760px) 50vw, 33vw"
+        />
         <span className="tour-card-category">{labels.category[tour.category]}</span>
         <span className="tour-card-arrow"><ArrowRight /></span>
       </Link>
       <div className="tour-card-content">
         <p className="tour-region"><MapPin />{content.region}</p>
-        <h3><Link href={localizedPath(locale, `/tours/${tour.slug}`)}>{content.title}</Link></h3>
+        <h3><Link href={localizedPath(locale, `/tours/${tour.slug}`)} aria-label={content.title}>{content.title}</Link></h3>
         <p className="tour-tagline">{content.tagline}</p>
         <div className="tour-rating">
           {tour.rating === null || tour.reviewCount === 0 ? (

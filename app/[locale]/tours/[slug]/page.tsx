@@ -137,6 +137,7 @@ export default async function TourDetailPage({ params }: { params: Promise<{ loc
           playLabel={editorial.playVideo}
           pauseLabel={editorial.pauseVideo}
           className="tour-detail-video"
+          sizes="100vw"
         />
         <div className="tour-detail-shade" />
         <div className="tour-detail-hero-copy">

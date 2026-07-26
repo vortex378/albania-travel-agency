@@ -22,7 +22,14 @@ export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
 
   return (
     <div className="language-switcher">
-      <button type="button" className="language-trigger" aria-expanded={open} onClick={() => setOpen((value) => !value)}>
+      <button
+        type="button"
+        className="language-trigger"
+        aria-label={`Change language. Current language: ${languageNames[locale]}`}
+        aria-haspopup="menu"
+        aria-expanded={open}
+        onClick={() => setOpen((value) => !value)}
+      >
         <Languages aria-hidden="true" />
         <span>{locale.toUpperCase()}</span>
         <ChevronDown aria-hidden="true" />

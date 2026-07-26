@@ -11,10 +11,11 @@ interface WhatsAppBookingProps {
   locale: Locale;
   tourTitle?: string;
   className?: string;
+  ariaLabel?: string;
   children: ReactNode;
 }
 
-export function WhatsAppBooking({ locale, tourTitle, className = "", children }: WhatsAppBookingProps) {
+export function WhatsAppBooking({ locale, tourTitle, className = "", ariaLabel, children }: WhatsAppBookingProps) {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -39,7 +40,14 @@ export function WhatsAppBooking({ locale, tourTitle, className = "", children }:
 
   return (
     <>
-      <button type="button" className={`booking-trigger ${className}`} onClick={() => setOpen(true)}>{children}</button>
+      <button
+        type="button"
+        className={`booking-trigger ${className}`}
+        aria-label={ariaLabel}
+        onClick={() => setOpen(true)}
+      >
+        {children}
+      </button>
       {open && (
         <div className="booking-backdrop" onMouseDown={() => setOpen(false)}>
           <aside className="booking-drawer" role="dialog" aria-modal="true" aria-labelledby="booking-title" onMouseDown={(event) => event.stopPropagation()}>
