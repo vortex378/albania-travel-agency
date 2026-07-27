@@ -51,16 +51,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     classification: "Albania tours, private day trips and guided small-group packages",
     formatDetection: { telephone: true, address: true, email: false },
     appleWebApp: { capable: true, title: SITE_NAME, statusBarStyle: "black-translucent" },
-    icons: {
-      icon: [
-        { url: "/favicon.ico", type: "image/x-icon", sizes: "96x96" },
-        { url: "/icon-48.png", type: "image/png", sizes: "48x48" },
-        { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
-        { url: "/favicon.svg", type: "image/svg+xml", sizes: "any" },
-      ],
-      shortcut: "/favicon.ico",
-      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
-    },
     manifest: "/manifest.webmanifest",
     ...(googleVerification || bingVerification || yandexVerification || baiduVerification || naverVerification ? { verification } : {}),
   };
