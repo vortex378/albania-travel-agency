@@ -2,6 +2,8 @@
 
 A premium multilingual booking website for guided Albania tours, private day trips and small-group tour packages.
 
+**[Visit the live site](https://albaniatours-hub.com/en)** · Built with Next.js, TypeScript, React and responsive CSS.
+
 ## What is included
 
 - Four complete static languages: English (`/en`), Albanian (`/sq`), German (`/de`) and French (`/fr`)
@@ -48,25 +50,25 @@ npm run start
 
 1. Import the repository and keep the framework preset as **Next.js**.
 2. Purchase or attach one memorable primary domain.
-3. Set `NEXT_PUBLIC_SITE_URL` to `https://albaniantours-hub.com` before the production deployment.
+3. Set `NEXT_PUBLIC_SITE_URL` to `https://albaniatours-hub.com` before the production deployment.
 4. Deploy and redirect every alternate domain to the primary domain.
 5. Add the domain to Google Search Console and Bing Webmaster Tools.
 6. Put the supplied verification values in:
    - `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`
    - `NEXT_PUBLIC_BING_SITE_VERIFICATION`
    - Optional regional engines: `NEXT_PUBLIC_YANDEX_SITE_VERIFICATION`, `NEXT_PUBLIC_BAIDU_SITE_VERIFICATION` and `NEXT_PUBLIC_NAVER_SITE_VERIFICATION`
-7. Submit `https://albaniantours-hub.com/sitemap.xml` in the webmaster tools you use.
+7. Submit `https://albaniatours-hub.com/sitemap.xml` in the webmaster tools you use.
 8. Request indexing for `/en`, `/en/tours` and `/en/travel-guide`.
 9. Notify IndexNow-compatible search engines after the production domain is live:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://albaniantours-hub.com npm run seo:indexnow
+NEXT_PUBLIC_SITE_URL=https://albaniatours-hub.com npm run seo:indexnow
 ```
 
 In Windows PowerShell:
 
 ```powershell
-$env:NEXT_PUBLIC_SITE_URL="https://albaniantours-hub.com"; npm run seo:indexnow
+$env:NEXT_PUBLIC_SITE_URL="https://albaniatours-hub.com"; npm run seo:indexnow
 ```
 
 Do not submit a Vercel preview URL for indexing. Keep page titles, navigation labels, canonical URLs and the favicon stable after launch.

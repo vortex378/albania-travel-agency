@@ -2,11 +2,11 @@ export const SITE_NAME = "Albanian Tours Hub";
 
 const configuredSiteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ||
-  "https://albaniantours-hub.com";
+  "https://albaniatours-hub.com";
 
 export const SITE_URL = configuredSiteUrl
   ? `${configuredSiteUrl.startsWith("http") ? "" : "https://"}${configuredSiteUrl}`.replace(/\/$/, "")
-  : "https://albaniantours-hub.com";
+  : "https://albaniatours-hub.com";
 export const WHATSAPP_NUMBER = "355697807864";
 export const PHONE_DISPLAY = "+355 69 780 7864";
 export const PHONE_TEL = "+355697807864";
